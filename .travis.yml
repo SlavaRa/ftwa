@@ -16,10 +16,10 @@ script:
   - cp builds/exports.mk freetype2/builds/exports.mk
   - cp main.c freetype2/main.c
   - cd freetype2
-  - emconfigure ./configure
-  - emmake make
+  #- emconfigure ./configure
+  #- emmake make
   - emcc -I ./include -o main.o main.c
-  - emcc -O3 --embed-file OCRA.otf --embed-file OCRB.otf -s NO_EXIT_RUNTIME=1 \
-    -s EXPORTED_FUNCTIONS='["_main","_load_font","_find_font","_get_bitmap",\
-    "_get_left","_get_top","_get_width","_get_height","_get_pitch","_get_advance"]' \
-    main.o objs/.libs/libfreetype.so -o freetype.js
+  #- emcc -O3-s NO_EXIT_RUNTIME=1 \
+  #  -s EXPORTED_FUNCTIONS='["_main","_load_font","_find_font","_get_bitmap",\
+  #  "_get_left","_get_top","_get_width","_get_height","_get_pitch","_get_advance"]' \
+  #  main.o objs/.libs/libfreetype.so -o freetype.js
