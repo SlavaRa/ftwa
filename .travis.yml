@@ -1,6 +1,8 @@
 install:
   - sudo apt-get update
-  - sudo apt-get install -y cmake build-essential openjdk-9-jre-headless
+  - sudo apt-get install -y cmake
+  - sudo apt-get install -y build-essential
+  - sudo apt-get install -y openjdk-9-jre-headless
 script:
   - git clone https://github.com/juj/emsdk.git emsdk --depth=10
   - cd emsdk
