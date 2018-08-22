@@ -4,21 +4,21 @@ install:
   - sudo apt-get install -y cmake
   - sudo apt-get install -y g++
 script:
-  - git clone https://github.com/juj/emsdk.git emsdk
+  - git clone https://github.com/juj/emsdk.git emsdk --depth=10
   - cd emsdk
   - ./emsdk update-tags
   - ./emsdk install latest
   - ./emsdk activate latest
   - . emsdk_env.sh
   - cd ..
-  - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2
+  - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2 --depth=10
   - cp modules.cfg freetype2/modules.cfg
   - cp builds/exports.mk freetype2/builds/exports.mk
   - cp main.c freetype2/main.c
   - cd freetype2
-  #- emconfigure ./configure
-  - emmake make
-  - emcc -I ./include -o main.o main.c
+  - emconfigure ./configure
+  #- emmake make
+  #- emcc -I ./include -o main.o main.c
   #- emcc -O3-s NO_EXIT_RUNTIME=1 \
   #  -s EXPORTED_FUNCTIONS='["_main","_load_font","_find_font","_get_bitmap",\
   #  "_get_left","_get_top","_get_width","_get_height","_get_pitch","_get_advance"]' \
