@@ -14,6 +14,7 @@ script:
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2 --depth=10
   - cp modules.cfg freetype2/modules.cfg
   - cp builds/exports.mk freetype2/builds/exports.mk
+  - cp include/config/ftoption.h freetype2/include/config/ftoption.h
   - cp main.c freetype2/main.c
   - cd freetype2
   - emconfigure ./configure
