@@ -12,12 +12,16 @@ script:
   - . emsdk_env.sh
   - cd ..
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2 --depth=10
-  - cp modules.cfg freetype2/modules.cfg
+  #- cp modules.cfg freetype2/modules.cfg
   #- cp builds/exports.mk freetype2/builds/exports.mk
-  - cp include/freetype/config/ftoption.h freetype2/include/freetype/config/ftoption.h
-  - cp main.c freetype2/main.c
+  #- cp include/freetype/config/ftoption.h freetype2/include/freetype/config/ftoption.h
+  #- cp main.c freetype2/main.c
   - cd freetype2
-  - emconfigure ./configure --prefix=/usr
+  - sh autohen.sh
+  - ./configure
+  - make
+  - make install
+  #- emconfigure ./configure
   #- emmake make
   #- emcc -I ./include -o main.o main.c
   #- emcc -O3-s NO_EXIT_RUNTIME=1 \
