@@ -13,6 +13,7 @@ script:
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2
   - cd freetype2
   - cp ../modules.cfg ./modules.cfg
+  - cp ../builds/exports.mk ./builds/exports.mk
   - emconfigure ./configure
   - emmake make
   - emcc -I ./include -o main.o main.c
