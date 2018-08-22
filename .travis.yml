@@ -15,7 +15,7 @@ script:
   - cd freetype2
   - sh autogen.sh
   - cp ../modules.cfg modules.cfg
-  #- cp ../builds/exports.mk builds/exports.mk
+  - cp ../builds/exports.mk builds/exports.mk
   #- cp ../include/freetype/config/ftoption.h include/freetype/config/ftoption.h
   - cp ../main.c main.c
   - ./configure
