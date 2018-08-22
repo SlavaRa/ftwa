@@ -1,8 +1,6 @@
 install:
   - sudo apt-get update
-  - sudo apt-get install -y default-jre
-  - sudo apt-get install -y cmake
-  - sudo apt-get install -y g++
+  - sudo apt-get install -y cmake build-essential openjdk-9-jre-headless
 script:
   - git clone https://github.com/juj/emsdk.git emsdk --depth=10
   - cd emsdk
@@ -18,9 +16,9 @@ script:
   - cp ../builds/exports.mk builds/exports.mk
   - cp ../include/freetype/config/ftoption.h include/freetype/config/ftoption.h
   - cp ../main.c main.c
-  - ./configure
+  №- ./configure
   #- make
-  #- emconfigure ./configure
+  - emconfigure ./configure
   - emmake make
   #- emcc -I ./include -o main.o main.c
   #- emcc -O3-s NO_EXIT_RUNTIME=1 \
