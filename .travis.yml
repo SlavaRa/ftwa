@@ -18,10 +18,10 @@ script:
   - cp ../builds/exports.mk builds/exports.mk
   - cp ../include/freetype/config/ftoption.h include/freetype/config/ftoption.h
   - cp ../main.c main.c
-  #- ./configure
-  #- make
-  - emconfigure ./configure
-  - emmake make
+  - ./configure
+  - make
+  #- emconfigure ./configure
+  #- emmake make
   #- emcc -I ./include -o main.o main.c
   #- emcc -O3-s NO_EXIT_RUNTIME=1 \
   #  -s EXPORTED_FUNCTIONS='["_main","_load_font","_find_font","_get_bitmap",\
