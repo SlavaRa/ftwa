@@ -14,6 +14,7 @@ script:
   - cd freetype2
   - cp ../modules.cfg ./modules.cfg
   - cp ../builds/exports.mk ./builds/exports.mk
+  - cp ../main.c ./main.c
   - emconfigure ./configure
   - emmake make
   - emcc -I ./include -o main.o main.c
