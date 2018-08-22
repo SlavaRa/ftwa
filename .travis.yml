@@ -18,11 +18,10 @@ script:
   #- cp main.c freetype2/main.c
   - cd freetype2
   - sh autogen.sh
-  - ./configure
-  - make
-  - make install
-  #- emconfigure ./configure
-  #- emmake make
+  #- ./configure
+  #- make
+  - emconfigure ./configure
+  - emmake make
   #- emcc -I ./include -o main.o main.c
   #- emcc -O3-s NO_EXIT_RUNTIME=1 \
   #  -s EXPORTED_FUNCTIONS='["_main","_load_font","_find_font","_get_bitmap",\
