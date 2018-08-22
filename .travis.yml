@@ -17,7 +17,7 @@ script:
   - cp include/freetype/config/ftoption.h freetype2/include/freetype/config/ftoption.h
   - cp main.c freetype2/main.c
   - cd freetype2
-  - emconfigure ./configure
+  - emconfigure ./configure --prefix=/usr
   #- emmake make
   #- emcc -I ./include -o main.o main.c
   #- emcc -O3-s NO_EXIT_RUNTIME=1 \
