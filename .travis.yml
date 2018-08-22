@@ -2,7 +2,7 @@ install:
   - apt-get install default-jre
   - apt-get install cmake
   - apt-get install g++
- script:
+script:
   - git clone https://github.com/juj/emsdk.git emsdk
   - cd emsdk
   - ./emsdk update-tags
