@@ -10,11 +10,12 @@ script:
   - ./emsdk install latest
   - ./emsdk activate latest
   - . emsdk_env.sh
+  - cd ..
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2
+  - cp modules.cfg freetype2/modules.cfg
+  - cp builds/exports.mk freetype2/builds/exports.mk
+  - cp main.c freetype2/main.c
   - cd freetype2
-  - cp ../modules.cfg ./modules.cfg
-  - cp ../builds/exports.mk ./builds/exports.mk
-  - cp ../main.c ./main.c
   - emconfigure ./configure
   - emmake make
   - emcc -I ./include -o main.o main.c
