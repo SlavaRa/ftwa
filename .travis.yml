@@ -14,7 +14,7 @@ script:
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2 --depth=10
   - cd freetype2
   - sh autogen.sh
-  #- cp ../modules.cfg modules.cfg
+  - cp ../modules.cfg modules.cfg
   #- cp ../builds/exports.mk builds/exports.mk
   #- cp ../include/freetype/config/ftoption.h include/freetype/config/ftoption.h
   - cp ../main.c main.c
