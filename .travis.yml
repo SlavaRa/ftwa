@@ -1,0 +1,19 @@
+install:
+  - apt-get install default-jre
+  - apt-get install cmake
+  - apt-get install g++
+ script:
+  - git clone https://github.com/juj/emsdk.git emsdk
+  - cd emsdk
+  - ./emsdk update-tags
+  - ./emsdk activate latest
+  - . emsdk_env.sh
+  - git clone clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2
+  - cd freetype2
+  - emconfigure ./configure
+  - emmake make
+  - emcc -I ./include -o main.o main.c
+  - emcc -O3 --embed-file OCRA.otf --embed-file OCRB.otf -s NO_EXIT_RUNTIME=1 \
+    -s EXPORTED_FUNCTIONS='["_main","_load_font","_find_font","_get_bitmap",\
+    "_get_left","_get_top","_get_width","_get_height","_get_pitch","_get_advance"]' \
+    main.o objs/.libs/libfreetype.so -o freetype.js
