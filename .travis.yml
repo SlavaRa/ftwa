@@ -3,23 +3,23 @@ install:
   - sudo apt-get install -y cmake
   - sudo apt-get install -y build-essential
   - sudo apt-get install -y openjdk-9-jre-headless
-  - sudo apt-get install -y emscripten
+  #- sudo apt-get install -y emscripten
 script:
-  #- git clone https://github.com/juj/emsdk.git emsdk --depth=10
-  #- cd emsdk
-  #- ./emsdk update-tags
-  #- ./emsdk install latest
-  #- ./emsdk activate latest
-  #- . emsdk_env.sh
-  #- cd ..
+  - git clone https://github.com/juj/emsdk.git emsdk --depth=10
+  - cd emsdk
+  - ./emsdk update-tags
+  - ./emsdk install latest
+  - ./emsdk activate latest
+  - . emsdk_env.sh
+  - cd ..
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2 --depth=10
   - cp ./modules.cfg freetype2/modules.cfg
   #- cp ./exports.mk freetype2/builds/exports.mk
   - cp ./include/freetype/config/ftoption.h freetype2/include/freetype/config/ftoption.h
   - cp ./main.c freetype2/main.c
   - cd freetype2
-  - emconfigure ./autogen.sh
-  - emconfigure ./configure
+  - ./autogen.sh
+  - ./configure
   #- make
   #- emconfigure ./configure
   - emmake make
