@@ -5,17 +5,19 @@ install:
   - sudo apt-get install -y openjdk-9-jre-headless
 script:
   - git clone https://github.com/juj/emsdk.git emsdk --depth=10
-  - emsdk/emsdk update-tags
-  - emsdk/emsdk install latest
-  - emsdk/emsdk activate latest
-  - emsdk/emsdk_env.sh
+  - cd emsdk
+  - ./emsdk update-tags
+  - ./emsdk install latest
+  - ./emsdk activate latest
+  - . emsdk_env.sh
+  - cd ..
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2 --depth=10
   - cd freetype2
-  - sh autogen.sh
   - cp ../modules.cfg modules.cfg
   #- cp ../builds/exports.mk builds/exports.mk
   - cp ../include/freetype/config/ftoption.h include/freetype/config/ftoption.h
   - cp ../main.c main.c
+  - sh autogen.sh
   - ./configure
   #- make
   #- emconfigure ./configure
