@@ -19,7 +19,7 @@ script:
   - cp ./main.c freetype2/main.c
   - cd freetype2
   - emconfigure ./autogen.sh
-  - ./configure
+  - emconfigure ./configure
   #- make
   #- emconfigure ./configure
   - emmake make
