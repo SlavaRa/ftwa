@@ -14,7 +14,7 @@ script:
   #- . emsdk_env.sh
   #- cd ..
   - emcc --version
-  - emsdk list
+  - emsdk --help
   
   # freetype
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2 --depth=10
