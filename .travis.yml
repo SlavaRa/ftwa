@@ -6,13 +6,15 @@ install:
   - sudo apt-get install -y emscripten
 script:
   # emscripten
-  - git clone https://github.com/juj/emsdk.git emsdk --depth=10
-  - cd emsdk
-  - ./emsdk update-tags
-  - ./emsdk install latest
-  - ./emsdk activate latest
-  - . emsdk_env.sh
-  - cd ..
+  #- git clone https://github.com/juj/emsdk.git emsdk --depth=10
+  #- cd emsdk
+  #- ./emsdk update-tags
+  #- ./emsdk install latest
+  #- ./emsdk activate latest
+  #- . emsdk_env.sh
+  #- cd ..
+  - emcc --version
+  - emcc list
   
   # freetype
   - git clone git://git.sv.nongnu.org/freetype/freetype2.git freetype2 --depth=10
